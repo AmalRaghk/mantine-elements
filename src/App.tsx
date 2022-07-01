@@ -1,24 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Divider, MantineProvider } from '@mantine/core';
+import Emailcomponent from './components/emailcomponent';
+import Passwordcomponent from './components/passwordcomponent';
+import Disablecomponent from './components/disablecomponent';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <MantineProvider theme={{fontFamily:"Sofia Pro"}}withGlobalStyles withNormalizeCSS>
+  
+        <Emailcomponent/>
+        <Divider  style={{width:"95%"}} mx="lg"/>
+        <Passwordcomponent/>
+        <Divider mx="lg" style={{width:"95%"}}/>
+        <Disablecomponent/>
+     
+      </MantineProvider>
     </div>
   );
 }
